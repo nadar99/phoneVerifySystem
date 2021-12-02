@@ -1,0 +1,107 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 02, 2021 at 09:01 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.4.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `phonesdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phone_numbers`
+--
+
+CREATE TABLE `phone_numbers` (
+  `id` int(6) UNSIGNED NOT NULL,
+  `valid` tinyint(4) DEFAULT NULL,
+  `number` varchar(30) NOT NULL,
+  `local_format` varchar(30) DEFAULT NULL,
+  `international_format` varchar(30) DEFAULT NULL,
+  `country_prefix` varchar(5) DEFAULT NULL,
+  `country_code` varchar(5) DEFAULT NULL,
+  `country_name` varchar(50) DEFAULT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  `carrier` varchar(50) DEFAULT NULL,
+  `line_type` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `phone_numbers`
+--
+
+INSERT INTO `phone_numbers` (`id`, `valid`, `number`, `local_format`, `international_format`, `country_prefix`, `country_code`, `country_name`, `location`, `carrier`, `line_type`, `created_at`) VALUES
+(6, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 17:49:38'),
+(7, 0, '01000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 17:50:17'),
+(8, 0, '01000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 17:50:42'),
+(9, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 17:51:03'),
+(10, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:41:00'),
+(11, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:41:53'),
+(12, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:43:15'),
+(13, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:44:29'),
+(14, 0, '4278542', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:45:08'),
+(15, 0, '4278542', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:45:40'),
+(16, 0, '4278542', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:45:49'),
+(17, 0, '01000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:45:55'),
+(18, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:46:59'),
+(19, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:47:31'),
+(20, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:49:44'),
+(21, NULL, '45312', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:50:03'),
+(22, NULL, '45312', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:50:14'),
+(23, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:50:49'),
+(24, NULL, '45312', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:51:03'),
+(25, NULL, '4278542', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:51:14'),
+(26, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:52:19'),
+(27, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:53:56'),
+(28, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:54:50'),
+(29, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:56:02'),
+(30, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:56:07'),
+(31, NULL, '01000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:56:38'),
+(32, NULL, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:57:13'),
+(33, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:58:13'),
+(34, 0, '01008152826', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:58:17'),
+(35, 0, '6230', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:58:21'),
+(36, 1, '+201008152826', '01008152826', '+201008152826', '+20', 'EG', 'Egypt (Arab Republic of)', '', 'Vodafone Egypt Telecommunications SAE', 'mobile', '2021-12-02 19:58:33'),
+(37, 0, '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-02 19:59:20'),
+(38, 1, '+201008152826', '01008152826', '+201008152826', '+20', 'EG', 'Egypt (Arab Republic of)', '', 'Vodafone Egypt Telecommunications SAE', 'mobile', '2021-12-02 19:59:28');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `phone_numbers`
+--
+ALTER TABLE `phone_numbers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `phone_numbers`
+--
+ALTER TABLE `phone_numbers`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

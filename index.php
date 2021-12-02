@@ -24,8 +24,30 @@
                     <div class="text-center">
                         <button type="submit" class="btn btn-success px-5 mb-5 w-100">Verify</button>
                     </div>
-
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['failed'])) {
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php
+                            echo $_SESSION['failed'];
+                            unset($_SESSION['failed']);
+                            ?>
+                        </div>
+                        <?php
+                    } elseif (isset($_SESSION['success'])) {
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php
+                            echo $_SESSION['success'];
+                            unset($_SESSION['success']);
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </form>
+
             </div>
         </div>
     </div>

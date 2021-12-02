@@ -29,7 +29,7 @@ class Phone
      * @param $carrier
      * @param $line_type
      */
-    public function __construct( $valid, $number,$local_format, $international_format, $country_prefix, $country_code, $country_name, $location, $carrier, $line_type)
+    public function __construct($valid, $number, $local_format, $international_format, $country_prefix, $country_code, $country_name, $location, $carrier, $line_type)
     {
         $this->number = $number;
         $this->valid = $valid;
@@ -202,11 +202,13 @@ class Phone
     {
         $this->line_type = $line_type;
     }
-    public function save(){
+
+    public function save()
+    {
         $conn = (new Connection())->getConnection();
         $stmt = $conn->prepare("INSERT INTO phone_numbers (valid, number, local_format, international_format, country_prefix, country_code, country_name, location, carrier, line_type)
   VALUES (:valid, :number, :local_format, :international_format, :country_prefix, :country_code, :country_name, :location, :carrier, :line_type)");
-        $stmt->bindParam(':valid',  $this->valid);
+        $stmt->bindParam(':valid', $this->valid);
         $stmt->bindParam(':number', $this->number);
         $stmt->bindParam(':local_format', $this->local_format);
         $stmt->bindParam(':international_format', $this->international_format);
@@ -217,9 +219,6 @@ class Phone
         $stmt->bindParam(':carrier', $this->carrier);
         $stmt->bindParam(':line_type', $this->line_type);
         $stmt->execute();
-
-
-
     }
 
 }
